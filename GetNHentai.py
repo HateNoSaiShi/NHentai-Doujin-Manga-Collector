@@ -2,7 +2,7 @@
 """
 Created on Mon Aug 13 00:05:25 2018
 
-@author: Soseisei
+@author: HateNoSaiShi
 """
 
 from urllib import request 
