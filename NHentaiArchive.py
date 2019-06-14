@@ -2,7 +2,7 @@
 """
 Created on Tue Aug 14 00:18:34 2018
 
-@author: Soseisei
+@author: HateNoSaiShi
 """
 
 import os
