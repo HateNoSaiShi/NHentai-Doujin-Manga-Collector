@@ -76,10 +76,7 @@ def DownloadQuest(gallery_id, path = r'E://touhou//doujin//待归档爬虫//'):
         try:
             download_url = download_url_prefix + download_model_id + '/' + str(illus_number) + download_url_suffix1
             file_name = download_path + '//' + str(illus_number) + '.jpg'
-            #request.urlretrieve(download_url, filename=file_name, reporthook=None, data=None)
-            temp_html = requests.get(download_url)
-            with open(file_name, 'wb') as file:
-                file.write(temp_html.content)
+            request.urlretrieve(download_url, filename=file_name, reporthook=None, data=None)
         except:
             try:
                 download_url = download_url_prefix + download_model_id + '/' + str(illus_number) + download_url_suffix2
@@ -91,10 +88,7 @@ def DownloadQuest(gallery_id, path = r'E://touhou//doujin//待归档爬虫//'):
             except:
                 download_url = download_url_prefix + download_model_id + '/' + str(illus_number) + download_url_suffix3
                 file_name = download_path + '//' + str(illus_number) + '.gif'
-                #request.urlretrieve(download_url, filename=file_name, reporthook=None, data=None)
-                temp_html = requests.get(download_url)
-                with open(file_name, 'wb') as file:
-                    file.write(temp_html.content)
+                request.urlretrieve(download_url, filename=file_name, reporthook=None, data=None)
     print('complete ' + folder_name + str(gallery_id))
     print('')
     return 0
@@ -102,9 +96,6 @@ def DownloadQuest(gallery_id, path = r'E://touhou//doujin//待归档爬虫//'):
     
 #====
 if __name__ == '__main__':
-    #a = GetBeautifulSoup(232296)
-    #b = GetAttributes(a)
-    #CreateFolder('test')
     _list= [182108]
 
     for id in _list:
