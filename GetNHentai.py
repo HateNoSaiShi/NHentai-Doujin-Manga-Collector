@@ -74,17 +74,20 @@ def DownloadQuest(gallery_id, path = r'E://touhou//doujin//待归档爬虫//'):
     for i in range(num):
         illus_number = i + 1
         try:
+            # if jpg
             download_url = download_url_prefix + download_model_id + '/' + str(illus_number) + download_url_suffix1
-            file_name = download_path + '//' + str(illus_number) + '.jpg'
+            file_name = download_path + '//' + str(illus_number) + download_url_suffix1
             request.urlretrieve(download_url, filename=file_name, reporthook=None, data=None)
         except:
             try:
+                # if png
                 download_url = download_url_prefix + download_model_id + '/' + str(illus_number) + download_url_suffix2
-                file_name = download_path + '//' + str(illus_number) + '.png'
+                file_name = download_path + '//' + str(illus_number) + download_url_suffix2
                 request.urlretrieve(download_url, filename=file_name, reporthook=None, data=None)
             except:
+                # if gif
                 download_url = download_url_prefix + download_model_id + '/' + str(illus_number) + download_url_suffix3
-                file_name = download_path + '//' + str(illus_number) + '.gif'
+                file_name = download_path + '//' + str(illus_number) + download_url_suffix3
                 request.urlretrieve(download_url, filename=file_name, reporthook=None, data=None)
     print('complete ' + folder_name + str(gallery_id))
     print('')
