@@ -81,10 +81,7 @@ def DownloadQuest(gallery_id, path = r'E://touhou//doujin//待归档爬虫//'):
             try:
                 download_url = download_url_prefix + download_model_id + '/' + str(illus_number) + download_url_suffix2
                 file_name = download_path + '//' + str(illus_number) + '.png'
-                #request.urlretrieve(download_url, filename=file_name, reporthook=None, data=None)
-                temp_html = requests.get(download_url)
-                with open(file_name, 'wb') as file:
-                    file.write(temp_html.content)
+                request.urlretrieve(download_url, filename=file_name, reporthook=None, data=None)
             except:
                 download_url = download_url_prefix + download_model_id + '/' + str(illus_number) + download_url_suffix3
                 file_name = download_path + '//' + str(illus_number) + '.gif'
